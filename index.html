@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Magic Fixup</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="icon" href="./static/favicon.svg" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              <small>
+                Magic Fixup<span style="font-weight:normal">:
+                  Streamlining Photo Editing <br> by Watching Dynamic Videos</span></h1>
+              </small>
+
+            <!-- <br> -->
+            <!-- <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>PDF</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                  <a href="#BibTeX"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-book"></i>
+                    </span>
+                    <span>BibTex</span>
+                    </a>
+                </span>
+
+              </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="content" align="center">
+          <video autoplay muted loop playsinline width="80%">
+            <source src="./static/videos/teaser.mp4" type="video/mp4">
+          </video>
+          <!-- <video id="teaser" autoplay muted playsinline loop>
+            <source src="./static/videos/2DCompare.mp4" type="video/mp4">
+          </video> -->
+          <div class="content has-text-centered">
+            <p>
+              We enable users to edit images with simple a cut-and-paste like approach, and fixup those edits automatically (TODO add freeze frame for results)
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <br>
+
+<!-- Abstract -->
+<section style="padding: 1.5rem 1.5rem 3rem 1.5rem;" class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 style="margin-top: 2.5rem;" class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Editing a photograph by rearranging its components parts to produce a realistic output is a meticulous and time-consuming process, that is prone to illusion-breaking mistakes. However, making rough edits to quickly convey the intended composition and concept is easy for a human.  We propose a generative method that takes a roughly edited image as input and synthesizes a photorealistic image that follows the prescribed layout, transferring fine details from the original unedited image to preserve the identity of its parts while adapting its content to the lighting and context defined by the new layout. Our model is initialized from a pretrained diffusion model and finetuned to explicitly adhere to both the user input and the original image. Our key insight is that videos are a natural source of supervision for this task, as objects and camera motions give us many observations of how the world changes with viewpoint, lighting, and physical interactions. We construct an image dataset, in which each sample is a pair of source and a target frame, extracted from the same video, at randomly chosen time intervals. We warp the source frame toward the target using two motion models that mimic the user edits we expect at test time. We supervise our model to translate the warped image into the ground truth. Our model design explicitly enables fine detail transfer from the source frame to the generated image. It closely follows the user-specified layout by our training procedure. We show that using simple segmentations and coarse 2D manipulations, we can sythesize a photorealistic edit that's faithful to the user's input, while addressing second-order effects like harmonizing the lighting and physical interactions between edited objects.
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Abstract -->
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="container">
+          <h2 class="title is-3">Approach</h2>
+          <div class="content has-text-justified">
+            <p>
+              TODO explain how we use the video idea. show nice animation for it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-fifths">
+        <div class="container">
+          <h2 class="title is-3">Results</h2>
+          <h2 class="title is-4">Spatial recomposition</h2>
+          <div class="content has-text-justified">
+            <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
+              <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/dog_beach_og.png" border="1" class="zoom">
+              </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+              <img src="./static/images/applications_images/dog_beach__edit__009.png" border="1" class="zoom"></label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/dog_beach__edit__009_output.png" border="1" class="zoom"></label>
+                <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/pipes.png" border="1" class="zoom">
+
+                </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/pipes__edit__010.png" border="1" class="zoom"></label>
+
+                <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/pipes__edit__010_output.png" border="1" class="zoom"></label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Reference image </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    User edit </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Output </label>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-fifths">
+        <div class="container">
+          <h2 class="title is-4">Reflections</h2>
+          <div class="content has-text-justified">
+            <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
+              <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/night_reflection_og.png" border="1" class="zoom">
+              </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+              <img src="./static/images/applications_images/night_reflection__edit__012_2.png" border="1" class="zoom"></label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/night_reflection__edit__012_output.png" border="1" class="zoom"></label>
+                <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/fox_drinking_og.png" border="1" class="zoom">
+
+                </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/fox_drinking__edit__018.png" border="1" class="zoom"></label>
+
+                <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/fox_drinking__edit__018_output.png" border="1" class="zoom"></label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Reference image </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    User edit </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Output </label>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-fifths">
+        <div class="container">
+          <h2 class="title is-4">Depth of field</h2>
+          <div class="content has-text-justified">
+            <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
+              <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/oranges_og.png" border="1" class="zoom">
+              </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+              <img src="./static/images/applications_images/oranges__edit__005.png" border="1" class="zoom"></label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/oranges__edit__005_output_sample_9.png" border="1" class="zoom"></label>
+                <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/snake_og.png" border="1" class="zoom">
+
+                </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/snake__edit__003.png" border="1" class="zoom"></label>
+
+                <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/snake__edit__003_output.png" border="1" class="zoom"></label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Reference image </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    User edit </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Output </label>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-fifths">
+        <div class="container">
+          <h2 class="title is-4">Reposing</h2>
+          <div class="content has-text-justified">
+
+            <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
+              <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/lion_2_og.png" border="1" class="zoom">
+              </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+              <img src="./static/images/applications_images/lion_2__edit__001.png" border="1" class="zoom"></label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/lion_2__edit__001_output.png" border="1" class="zoom"></label>
+                <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/geese_3_og.png" border="1" class="zoom">
+
+                </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/geese_3__edit__002.png" border="1" class="zoom"></label>
+
+                <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/geese_3__edit__002_output.png" border="1" class="zoom"></label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Reference image </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    User edit </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Output </label>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  
+  <br>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-fifths">
+        <div class="container">
+          <h2 class="title is-4">Global illumination with Cornell Box</h2>
+          <div class="content has-text-justified">
+            <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
+              <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/cornell_box_v1.png" border="1" class="zoom">
+              </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+              <img src="./static/images/applications_images/cornell_box_v1__edit__004.png" border="1" class="zoom"></label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/cornell_box_v1__edit__004_output_2.png" border="1" class="zoom"></label>
+                <label class="label" id="example1_refocusing_w" style="width: 32%; vertical-jpg: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/cornell_box_v1.png" border="1" class="zoom">
+
+                </label>
+              <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/cornell_box_v1__edit__012.png" border="1" class="zoom"></label>
+
+                <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/cornell_box_v1__edit__012_output.png" border="1" class="zoom"></label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Reference image </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    User edit </label>
+                  <label class="label" style="width: 32%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                    Output </label>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="container">
+          <h2 class="title is-3">User interface demo</h2>
+          <div class="content has-text-justified">
+            <p>
+              Add a gif showing the user interface
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+
+  <!-- <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered"><b>Stablization from handheld captures</b></h2>
+    </div>
+    <br>
+    <div class="container is-max-desktop">
+      <div class="content" align="center">
+        <video autoplay muted loop playsinline width="80%">
+          <source src="./static/videos/2DCompare.mp4" type="video/mp4">
+        </video>
+       <video id="teaser" autoplay muted playsinline loop>
+          <source src="./static/videos/2DCompare.mp4" type="video/mp4">
+        </video> -->
+        <!-- <div class="content has-text-centered">
+
+        </div>
+      </div>
+    </div>
+    <br>
+  </div> --> 
+  
+
+  <br>
+  <div class="columns is-centered has-text-right">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          <small><small>
+            Template from <a href="https://nerfies.github.io/">Nerfies</a>
+          </small></small>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
