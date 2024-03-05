@@ -125,7 +125,7 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 style="margin-top: 0.1rem;" class="title is-4">Abstract</h2>
+        <h2 style="margin-top: 0.1rem;" class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Editing a photograph by rearranging its components parts to produce a realistic output is a meticulous and time-consuming process, that is prone to illusion-breaking mistakes. However, making rough edits to quickly convey the intended composition and concept is easy for a human.  We propose a generative method that takes a roughly edited image as input and synthesizes a photorealistic image that follows the prescribed layout, transferring fine details from the original unedited image to preserve the identity of its parts while adapting its content to the lighting and context defined by the new layout. Our model is initialized from a pretrained diffusion model and finetuned to explicitly adhere to both the user input and the original image. Our key insight is that videos are a natural source of supervision for this task, as objects and camera motions give us many observations of how the world changes with viewpoint, lighting, and physical interactions. We construct an image dataset, in which each sample is a pair of source and a target frame, extracted from the same video, at randomly chosen time intervals. We warp the source frame toward the target using two motion models that mimic the user edits we expect at test time. We supervise our model to translate the warped image into the ground truth. Our model design explicitly enables fine detail transfer from the source frame to the generated image. It closely follows the user-specified layout by our training procedure. We show that using simple segmentations and coarse 2D manipulations, we can sythesize a photorealistic edit that's faithful to the user's input, while addressing second-order effects like harmonizing the lighting and physical interactions between edited objects.
@@ -138,20 +138,28 @@
 </section>
 <!--/ Abstract -->
 
-  <section class="hero is-small">
-    <div class="hero-body">
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="container">
-          <h2 class="title is-3">Approach</h2>
-          <div class="content has-text-justified">
-            <p>
-              TODO explain how we use the video idea. show nice animation for it.
-            </p>
-          </div>
+        <div class="column is-four-fifths">
+      <h2 style="margin-top: 0.1rem;" class="title is-3">Approach</h2>
+      <div class="content" align="center" >
+        <video autoplay muted loop playsinline controls width="100%">
+          <source src="./static/videos/magic_out_explainer.mp4" type="video/mp4">
+        </video>
+        <div class="content has-text-centered">
+          <p>
+            TODO add approach text explanation
+          </p>
         </div>
       </div>
+      </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
   <br>
   <section class="hero is-small">
     <div class="hero-body">
