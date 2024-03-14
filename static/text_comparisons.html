@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Magic Fixup</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="icon" href="./favicon.svg" />
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./js/fontawesome.all.min.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+
+  <style>
+    @media only screen and (max-width: 850px) {
+      .column.is-three-fifths {
+        width: 85%; /* Adjust the width as per your requirement */
+        margin: auto; /* Center the div */
+      }
+    }
+  </style>
+
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="container">
+          <h2 class="title is-3">Additional comparisons with text-based methods</h2>
+          <div class="container">
+            <h2 class="title is-4"></h2>
+            <div class="content has-text-justified">
+              <br>
+              <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
+                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  Reference image </label>
+                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  User edit </label>
+                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  Magic Fixup (ours) </label>
+                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  SDEdit </label>
+                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  InstructPix2Pix </label>
+                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  Masa-Ctrl </label>
+                <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                  <img src="./images/applications_images/fox_drinking_og.jpg" border="1" class="zoom">
+                </label>
+                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./images/applications_images/fox_drinking__inpainted__018.jpg" border="1" class="zoom"></label>
+                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                  <img src="./images/applications_images/fox_drinking__inpainted__018.jpg" border="1" class="zoom"></label>
+                  <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                    <img src="./sdedit_samples/fox_drinking__edit__018_sdedit.jpg" border="1" class="zoom"></label>
+                  <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                    <img src="./instruct_pix2pix_outputs/outputs/fox_drinking_output.jpg" border="1" class="zoom"></label>
+                  <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                    <img src="./masactrl_out/fox_drinking.jpg" border="1" class="zoom"> </label>
+                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      </label>
+                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                       </label>
+                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      </label>
+                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      </label>
+                    <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      <p> prompt: reflect the fox to the other side </p> </label>
+                    <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      prompt: photo of a fox drinking on the right side </label>
+
+                      <br>
+                      <br>
+                      <br>
+
+                    <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                      <img src="./images/applications_images/desk2.jpg" border="1" class="zoom">
+                    </label>
+                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                    <img src="./images/applications_images/desk2__edit__001.jpg" border="1" class="zoom"></label>
+                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                      <img src="./images/applications_images/desk2__inpainted__001.jpg" border="1" class="zoom"></label>
+                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                        <img src="./images/applications_images/desk2__edit__001_sdedit.jpg" border="1" class="zoom"></label>
+                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                        <img src="./instruct_pix2pix_outputs/outputs/desk2_output.jpg" border="1" class="zoom"></label>
+                      <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                        <img src="./masactrl_out/desk.jpg" border="1" class="zoom"> </label>
+                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        </label>
+                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                         </label>
+                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        </label>
+                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        </label>
+                      <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        <p> prompt: duplicate the cup on the table </p> </label>
+                      <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        prompt: two golden cups on table</label>
+
+
+                      <br>
+                      <br>
+                      <br>
+
+                        <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                          <img src="./images/applications_images/dog_beach_og.jpg" border="1" class="zoom">
+                        </label>
+                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                        <img src="./images/new_application_images/dog_beach__inpainted__015.jpg" border="1" class="zoom"></label>
+                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                          <img src="./images/new_application_images/dog_beach__edit__015_output.jpg" border="1" class="zoom"></label>
+                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                            <img src="./sdedit_samples/dog_beach__edit__015_sdedit.jpg" border="1" class="zoom"></label>
+                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                            <img src="./instruct_pix2pix_outputs/outputs/dog_beach_copies_output.jpg" border="1" class="zoom"></label>
+                          <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                            <img src="./masactrl_out/dog_beach.jpg" border="1" class="zoom"> </label>
+
+                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                            </label>
+                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                             </label>
+                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                            </label>
+                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                            </label>
+                          <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                            <p> prompt: create 4 copies of the dog</p> </label>
+                          <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                            prompt: four dogs on the beach </label>
+
+                            <br>
+                            <br>
+                            <br>
+                          
+                            <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                              <img src="./images/applications_images/oranges_og.jpg" border="1" class="zoom">
+                            </label>
+                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                            <img src="./images/applications_images/oranges__inpainted__005.jpg" border="1" class="zoom"></label>
+                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                              <img src="./images/applications_images/oranges__edit__005_output_sample_9.jpg" border="1" class="zoom"></label>
+                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                <img src="./sdedit_samples/sdedit_oranges1.jpg" border="1" class="zoom"></label>
+                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                <img src="./instruct_pix2pix_outputs/outputs/oranges_output.jpg" border="1" class="zoom"></label>
+                              <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                <img src="./masactrl_out/oranges.jpg" border="1" class="zoom"> </label>
+                                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                </label>
+                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                 </label>
+                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                </label>
+                                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                </label>
+                              <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                <p> prompt: move an orange from the background to the foreground</p> </label>
+                              <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                prompt: shallow depth of field photo of oranges </label>
+
+                            
+                                <br>
+                            <br>
+                            <br>
+                          
+                            <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                              <img src="./images/applications_images/snake_og.jpg" border="1" class="zoom">
+                            </label>
+                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                            <img src="./images/applications_images/snake__inpainted__003.jpg" border="1" class="zoom"></label>
+                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                              <img src="./images/applications_images/snake__edit__003_output.jpg" border="1" class="zoom"></label>
+                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                <img src="./sdedit_samples/sdedit_snake1.jpg" border="1" class="zoom"></label>
+                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                <img src="./instruct_pix2pix_outputs/outputs/snake_output.jpg" border="1" class="zoom"></label>
+                              <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                <img src="./masactrl_out/snakes.jpg" border="1" class="zoom"> </label>
+                                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                </label>
+                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                 </label>
+                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                </label>
+                                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                </label>
+                              <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                <p> prompt: copy the snake to the foreground</p> </label>
+                              <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                prompt: shallow depth of field photo of 2 snakes </label>
+
+                            
+                                <br>
+                                <br>
+                                <br>
+                              
+                                <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                  <img src="./images/applications_images/white_horse_og.jpg" border="1" class="zoom">
+                                </label>
+                                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                <img src="./images/applications_images/white_horse__inpainted__036.jpg" border="1" class="zoom"></label>
+                                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                  <img src="./images/applications_images/white_horse__edit__036_output.jpg" border="1" class="zoom"></label>
+                                  <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                    <img src="./sdedit_samples/white_horse__edit__036_sdedit.jpg" border="1" class="zoom"></label>
+                                  <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                    <img src="./instruct_pix2pix_outputs/outputs/white_horse_output.jpg" border="1" class="zoom"></label>
+                                  <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                    <img src="./masactrl_out/white_horse.jpg" border="1" class="zoom"> </label>
+                                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                    </label>
+                                  <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                     </label>
+                                  <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                    </label>
+                                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                    </label>
+                                  <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                    <p> prompt: make the horse jump</p> </label>
+                                  <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                    prompt: white horse jumping in the air </label>
+                                  
+                                    <br>
+                                    <br>
+                                    <br>
+                                  
+                                    <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                      <img src="./images/new_application_images/all_orange_og.jpg" border="1" class="zoom">
+                                    </label>
+                                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                    <img src="./images/new_application_images/all_orange__inpainted__001.jpg" border="1" class="zoom"></label>
+                                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                      <img src="./images/new_application_images/all_orange__edit__001_output.jpg" border="1" class="zoom"></label>
+                                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                        <img src="./sdedit_samples/all_orange__edit__001_sdedit.jpg" border="1" class="zoom"></label>
+                                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                        <img src="./instruct_pix2pix_outputs/outputs/all_orange_output.jpg" border="1" class="zoom"></label>
+                                      <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                        <img src="./masactrl_out/all_orange.jpg" border="1" class="zoom"> </label>
+                                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        </label>
+                                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                         </label>
+                                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        </label>
+                                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        </label>
+                                      <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        <p> prompt: remove the jar</p> </label>
+                                      <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        prompt: photo of clementines and flower on table </label>
+                                    
+                                        <br>
+                                    <br>
+                                    <br>
+                                  
+                                    <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                      <img src="./images/new_application_images/cup_coffee_og.jpg" border="1" class="zoom">
+                                    </label>
+                                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                    <img src="./images/new_application_images/cup_coffee__inpainted__005.jpg" border="1" class="zoom"></label>
+                                    <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                      <img src="./images/new_application_images/cup_coffee__edit__005_output.jpg" border="1" class="zoom"></label>
+                                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                        <img src="./sdedit_samples/cup_coffee__edit__005_sdedit.jpg" border="1" class="zoom"></label>
+                                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                        <img src="./instruct_pix2pix_outputs/outputs/cup_coffee_output.jpg" border="1" class="zoom"></label>
+                                      <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                        <img src="./masactrl_out/cup_coffee.jpg" border="1" class="zoom"> </label>
+                                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        </label>
+                                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                         </label>
+                                      <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        </label>
+                                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        </label>
+                                      <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        <p> prompt: move the mug to the left</p> </label>
+                                      <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                        prompt: a coffee mug on the left side of the table </label>
+                                    
+                                        <br>
+                                        <br>
+                                        <br>
+                                      
+                                        <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                          <img src="./images/applications_images/kingfisher_og.jpg" border="1" class="zoom">
+                                        </label>
+                                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                        <img src="./images/applications_images/kingfisher__inpainted__003.jpg" border="1" class="zoom"></label>
+                                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                          <img src="./images/applications_images/kingfisher__edit__003_output.jpg" border="1" class="zoom"></label>
+                                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                            <img src="./images/applications_images/kingfisher__edit__003_sdedit.jpg" border="1" class="zoom"></label>
+                                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                            <img src="./instruct_pix2pix_outputs/outputs/kingfisher_output.jpg" border="1" class="zoom"></label>
+                                          <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                            <img src="./masactrl_out/kingfisher.jpg" border="1" class="zoom"> </label>
+                                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            </label>
+                                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                             </label>
+                                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            </label>
+                                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            </label>
+                                          <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            <p> prompt: move the kingfisher to the left </p> </label>
+                                          <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            prompt: kingfisher diving on the left of an image </label>
+
+                                            <br>
+                                        <br>
+                                        <br>
+                                      
+                                        <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                          <img src="./images/applications_images/night_reflection_og.jpg" border="1" class="zoom">
+                                        </label>
+                                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                        <img src="./images/applications_images/night_reflection__inpainted__012_2.jpg" border="1" class="zoom"></label>
+                                        <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                          <img src="./images/applications_images/night_reflection__edit__012_output.jpg" border="1" class="zoom"></label>
+                                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                            <img src="./sdedit_samples/sdedit_night1.jpg" border="1" class="zoom"></label>
+                                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                            <img src="./instruct_pix2pix_outputs/outputs/night_reflection_output.jpg" border="1" class="zoom"></label>
+                                          <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                            <img src="./masactrl_out/night_reflection.jpg" border="1" class="zoom"> </label>
+                                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            </label>
+                                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                             </label>
+                                          <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            </label>
+                                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            </label>
+                                          <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            <p> prompt: move the cyclist to the left </p> </label>
+                                          <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                            prompt: a cyclist under the moonlight on the left </label>
+                                          
+                                            <br>
+                                            <br>
+                                            <br>
+                                          
+                                            <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                              <img src="./images/new_application_images/monet_venice_og.jpg" border="1" class="zoom">
+                                            </label>
+                                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                            <img src="./images/new_application_images/monet_venice__inpainted__001.jpg" border="1" class="zoom"></label>
+                                            <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                              <img src="./images/new_application_images/monet_venice__edit__001_output.jpg" border="1" class="zoom"></label>
+                                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                                <img src="./sdedit_samples/monet_venice__edit__001_sdedit.jpg" border="1" class="zoom"></label>
+                                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;">
+                                                <img src="./instruct_pix2pix_outputs/outputs/monet_venice_output.jpg" border="1" class="zoom"></label>
+                                              <label class="label" id="example1_refocusing_w" style="width: 16%; vertical-jpg: middle;margin: 0; padding: 0;">
+                                                <img src="./masactrl_out/monet_venice.jpg" border="1" class="zoom"> </label>
+                                                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                                </label>
+                                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                                 </label>
+                                              <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                                </label>
+                                                <label class="label" style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                                </label>
+                                              <label style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                                <p> prompt: move the building to the right </p> </label>
+                                              <label  style="width: 16%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                                                prompt: a monet painting of a building on the right </label>
+                    
+                      
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+
+</body>
+</html>
