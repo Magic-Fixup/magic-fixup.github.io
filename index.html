@@ -4,6 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>Magic Fixup</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GR3QBE9MVE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GR3QBE9MVE');
+</script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="icon" href="./static/favicon.svg" />
@@ -215,177 +224,6 @@
     </div>
   </section>
   <br>
-
-
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="columns is-centered has-text-centered">
-        <div class="container">
-          <h2 class="title is-3">Comparison with baselines</h2>
-          <div class="container">
-            <h2 class="title is-4">comparison with text-based methods</h2>
-            <p>
-              Here we compare our method against text-based editing methods InstructPix2Pix (Brooks et al. 2023) and Masa-ctrl (Cao et al. 2023). We attempt our best effort to describe the user edits in text prompts, but we want to stress that text is strictly less expressive than simply editing the image directly. Note that for methods that rely on DDIM inversion (like Masa-ctrl below), because DDIM inversion is not always reliable, the reconstruction can be significantly different from the input image (as shown in the fox example). On the other hand, our method takes the edited image directly, so it is consistently faithful to the input and faster to run.  <b> <a href="./static/text_comparisons.html">More comparison results here</a></b>. <br>
-            </p> 
-            <div class="content has-text-justified">
-              <br>
-              <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                  Reference image </label>
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                  User edit </label>
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                  Magic Fixup (ours) </label>
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                  InstructPix2Pix </label>
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                  Masa-Ctrl </label>
-                <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
-                  <img src="./static/images/applications_images/fox_drinking_og.jpg" border="1" class="zoom">
-                </label>
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                <img src="./static/images/applications_images/fox_drinking__inpainted__018.jpg" border="1" class="zoom"></label>
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                  <img src="./static/images/applications_images/fox_drinking__edit__018_output.jpg" border="1" class="zoom"></label>
-                  <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                    <img src="./static/instruct_pix2pix_outputs/outputs/fox_drinking_output.jpg" border="1" class="zoom"></label>
-                  <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
-                    <img src="./static/masactrl_out/fox_drinking.jpg" border="1" class="zoom"> </label>
-                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                      </label>
-                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                       </label>
-                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                      </label>
-                    <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                      <p> prompt: reflect the fox to the other side </p> </label>
-                    <label  style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                      prompt: photo of a fox drinking on the right side </label>
-
-                      <br>
-                      <br>
-                      <br>
-
-
-                    <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
-                      <img src="./static/images/applications_images/desk2.jpg" border="1" class="zoom">
-                    </label>
-                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                    <img src="./static/images/applications_images/desk2__edit__001.jpg" border="1" class="zoom"></label>
-                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                      <img src="./static/images/applications_images/desk2__edit__001_output.jpg" border="1" class="zoom"></label>
-                      <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                        <img src="./static/instruct_pix2pix_outputs/outputs/desk2_output.jpg" border="1" class="zoom"></label>
-                      <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
-                        <img src="./static/masactrl_out/desk.jpg" border="1" class="zoom"> </label>
-                        <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                        </label>
-                      <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                         </label>
-                      <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                        </label>
-                      <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                        <p> prompt: duplicate the cup on the table </p> </label>
-                      <label  style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                        prompt: two golden cups on table</label>
-                    
-                      
-              </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
-
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="columns is-centered has-text-centered">
-        <div class="container">
-          <h2 class="title is-3">Comparison with reposing methods</h2>
-              <p>
-              By augmenting our user interface to keep track of dense correspondences, we can generate dragging key-handles for DragDiffusion (Shi et al. 2024), and the dense flow needed for Motion Guidance (Geng et al. 2024).
-              However, we find that both of these SoTA methods are unable to handle complex reposing scenarios. <br>
-            </p> 
-            <br>
-          <div class="content has-text-justified">
-            <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
-
-            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-              Reference image </label>
-            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-              User edit </label>
-            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-              Magic Fixup (ours) </label>
-            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-              DragDiffusion </label>
-            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-              MotionGuidance </label>
-            <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
-              <img src="./static/images/applications_images/lion_2_og.jpg" border="1" class="zoom"></label>
-            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-            <img src="./static/images/applications_images/lion_2__inpainted__001.jpg" border="1" class="zoom"></label>
-            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-              <img src="./static/images/applications_images/lion_2__edit__001_output.jpg" border="1" class="zoom"></label>
-              <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                <img src="./static/images/applications_images/lion_dragdiff.jpg" border="1" class="zoom"></label>
-              <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                <img src="./static/images/applications_images/lion_motion_guidance.jpg" border="1" class="zoom"></label>
-
-                <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
-                  <img src="./static/images/applications_images/white_horse_og.jpg" border="1" class="zoom">
-                </label>
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                <img src="./static/images/applications_images/white_horse__inpainted__036.jpg" border="1" class="zoom"></label>
-                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                  <img src="./static/images/applications_images/white_horse__edit__036_output.jpg" border="1" class="zoom"></label>
-                  <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                    <img src="./static/images/applications_images/white_horse_dragdiff.jpg" border="1" class="zoom"></label>
-                  <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
-                    <img src="./static/images/applications_images/white_horse_motion_guidance.jpg"  border="1" class="zoom"></label>
-
-                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                       </label>
-                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                     </label>
-                    <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                      Runtime: 5 seconds </label>
-                    <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                      Runtime: 3 minutes </label>
-                    <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
-                      Runtime: 50 minutes </label>
-          </div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
-
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-        <h2 style="margin-top: 0.1rem;" class="title is-3">User interface demo</h2>
-        <div class="content" align="center" >
-          <video autoplay muted loop playsinline controls width="100%">
-            <source src="./static/videos/UI_demo.mp4" type="video/mp4">
-          </video>
-          <div class="content has-text-centered">
-            <p>
-             We created a user interface, we call it the Collage Transform, where users can simply segment objects (or parts), and apply affine transformation, duplicate, or delete the segments as a simplified yet expressive editing interface. Here we show an example for using our interface (we speed up the segmentation and sampling time for brevity).
-            </p>
-          </div>
-        </div>
-        </div>
-        </div>
-  
-      </div>
-    </div>
-  </section>
-    <br>
-
 
   <section class="hero is-small">
     <div class="hero-body">
@@ -618,6 +456,180 @@
     </div>
   </section>
   <br>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+        <h2 style="margin-top: 0.1rem;" class="title is-3">User interface demo</h2>
+        <div class="content" align="center" >
+          <video autoplay muted loop playsinline controls width="100%">
+            <source src="./static/videos/UI_demo.mp4" type="video/mp4">
+          </video>
+          <div class="content has-text-centered">
+            <p>
+             We created a user interface, we call it the Collage Transform, where users can simply segment objects (or parts), and apply affine transformation, duplicate, or delete the segments as a simplified yet expressive editing interface. Here we show an example for using our interface (we speed up the segmentation and sampling time for brevity).
+            </p>
+          </div>
+        </div>
+        </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+    <br>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="container">
+          <h2 class="title is-3">Comparison with baselines</h2>
+          <div class="container">
+            <h2 class="title is-4">comparison with text-based methods</h2>
+            <p>
+              Here we compare our method against text-based editing methods InstructPix2Pix (Brooks et al. 2023) and Masa-ctrl (Cao et al. 2023). We attempt our best effort to describe the user edits in text prompts, but we want to stress that text is strictly less expressive than simply editing the image directly. Note that for methods that rely on DDIM inversion (like Masa-ctrl below), because DDIM inversion is not always reliable, the reconstruction can be significantly different from the input image (as shown in the fox example). On the other hand, our method takes the edited image directly, so it is consistently faithful to the input and faster to run.  <b> <a href="./static/text_comparisons.html">More comparison results here</a></b>. <br>
+            </p> 
+            <div class="content has-text-justified">
+              <br>
+              <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  Reference image </label>
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  User edit </label>
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  Magic Fixup (ours) </label>
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  InstructPix2Pix </label>
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                  Masa-Ctrl </label>
+                <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/fox_drinking_og.jpg" border="1" class="zoom">
+                </label>
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/fox_drinking__inpainted__018.jpg" border="1" class="zoom"></label>
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/fox_drinking__edit__018_output.jpg" border="1" class="zoom"></label>
+                  <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                    <img src="./static/instruct_pix2pix_outputs/outputs/fox_drinking_output.jpg" border="1" class="zoom"></label>
+                  <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
+                    <img src="./static/masactrl_out/fox_drinking.jpg" border="1" class="zoom"> </label>
+                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      </label>
+                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                       </label>
+                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      </label>
+                    <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      <p> prompt: reflect the fox to the other side </p> </label>
+                    <label  style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      prompt: photo of a fox drinking on the right side </label>
+
+                      <br>
+                      <br>
+                      <br>
+
+
+                    <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
+                      <img src="./static/images/applications_images/desk2.jpg" border="1" class="zoom">
+                    </label>
+                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                    <img src="./static/images/applications_images/desk2__edit__001.jpg" border="1" class="zoom"></label>
+                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                      <img src="./static/images/applications_images/desk2__edit__001_output.jpg" border="1" class="zoom"></label>
+                      <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                        <img src="./static/instruct_pix2pix_outputs/outputs/desk2_output.jpg" border="1" class="zoom"></label>
+                      <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
+                        <img src="./static/masactrl_out/desk.jpg" border="1" class="zoom"> </label>
+                        <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        </label>
+                      <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                         </label>
+                      <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        </label>
+                      <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        <p> prompt: duplicate the cup on the table </p> </label>
+                      <label  style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                        prompt: two golden cups on table</label>
+                    
+                      
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="container">
+          <h2 class="title is-3">Comparison with reposing methods</h2>
+              <p>
+              By augmenting our user interface to keep track of dense correspondences, we can generate dragging key-handles for DragDiffusion (Shi et al. 2024), and the dense flow needed for Motion Guidance (Geng et al. 2024).
+              However, we find that both of these SoTA methods are unable to handle complex reposing scenarios. <br>
+            </p> 
+            <br>
+          <div class="content has-text-justified">
+            <div class="field-body" style="display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; vertical-align: middle;">
+
+            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+              Reference image </label>
+            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+              User edit </label>
+            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+              Magic Fixup (ours) </label>
+            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+              DragDiffusion </label>
+            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+              MotionGuidance </label>
+            <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
+              <img src="./static/images/applications_images/lion_2_og.jpg" border="1" class="zoom"></label>
+            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+            <img src="./static/images/applications_images/lion_2__inpainted__001.jpg" border="1" class="zoom"></label>
+            <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+              <img src="./static/images/applications_images/lion_2__edit__001_output.jpg" border="1" class="zoom"></label>
+              <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/lion_dragdiff.jpg" border="1" class="zoom"></label>
+              <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/lion_motion_guidance.jpg" border="1" class="zoom"></label>
+
+                <label class="label" id="example1_refocusing_w" style="width: 19%; vertical-jpg: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/white_horse_og.jpg" border="1" class="zoom">
+                </label>
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                <img src="./static/images/applications_images/white_horse__inpainted__036.jpg" border="1" class="zoom"></label>
+                <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                  <img src="./static/images/applications_images/white_horse__edit__036_output.jpg" border="1" class="zoom"></label>
+                  <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                    <img src="./static/images/applications_images/white_horse_dragdiff.jpg" border="1" class="zoom"></label>
+                  <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;">
+                    <img src="./static/images/applications_images/white_horse_motion_guidance.jpg"  border="1" class="zoom"></label>
+
+                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                       </label>
+                    <label class="label" style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                     </label>
+                    <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      Runtime: 5 seconds </label>
+                    <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      Runtime: 3 minutes </label>
+                    <label style="width: 19%; vertical-align: middle;margin: 0; padding: 0;  text-align: center;">
+                      Runtime: 50 minutes </label>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+
+
+
+
 
   <section class="hero is-small">
     <div class="hero-body">
